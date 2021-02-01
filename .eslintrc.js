@@ -7,6 +7,7 @@ module.exports = {
   },
   env: {
     browser: true,
+    es6: true
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
@@ -15,6 +16,14 @@ module.exports = {
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: "module"
+  },
   // required to lint *.vue files
   plugins: [
     'vue'

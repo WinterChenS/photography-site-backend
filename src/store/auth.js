@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie'
+import settings from '@/settings'
 
-const TokenKey = 'Authorization'
+const TokenKey = settings.TokenKey
 
 export function getToken () {
   return Cookies.get(TokenKey)

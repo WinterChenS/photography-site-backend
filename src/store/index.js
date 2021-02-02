@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import settings from '@/settings'
 
 Vue.use(Vuex)
 
@@ -16,15 +17,17 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
   return modules
 }, {})
 
+const tokenKey = settings.tokenKey
+
 const store = new Vuex.Store({
   state: {
-    Authorization: localStorage.getItem('Authorization') ? localStorage.getItem('Authorization') : ''
+    Authorization: localStorage.getItem(tokenKey) ? localStorage.getItem(tokenKey) : ''
   },
 
   mutations: {
     changeToken (state, user) {
       state.Authorization = user.Authorization
-      localStorage.setItem('Authorization', user.Authorization)
+      localStorage.setItem(tokenKey, user.Authorization)
     }
   },
   modules

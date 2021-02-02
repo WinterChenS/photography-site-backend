@@ -135,7 +135,7 @@ export default {
           }
           this.$store.dispatch('Login', user).then(() => {
             this.loading = false
-            this.$router.push({ path: this.redirect || '/home' })
+            this.$router.push({ path: this.redirect || '/' })
           }).catch(() => {
             console.log('login error!!')
             this.loading = false

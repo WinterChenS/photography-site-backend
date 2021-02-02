@@ -9,6 +9,12 @@ export const constantRouterMap = [
     meta: { title: '登录', noCache: true },
     component: (resolve) => require(['@/views/login'], resolve),
     hidden: true
+  },
+  {
+    path: '/home',
+    meta: {title: '管理页', noCache: true},
+    component: (resolve) => require(['@/views/admin/home'], resolve),
+    hidden: true
   }
 ]
 
